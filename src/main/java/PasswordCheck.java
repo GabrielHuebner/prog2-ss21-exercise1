@@ -61,12 +61,14 @@ public class PasswordCheck {
             }
         }
 
+        //Repeating Numbers
         for(int i = 0; i < password.length() -3; i++){
             if(Character.isDigit(c[i]) && Character.isDigit(c[i+1]) && Character.isDigit(c[i+2]) && Character.isDigit(c[i+3]) && c[i] == c[i+1] && c[i] == c[i+2] && c[i] == c[i+3]){
                 repeatingNumbers = true;
             }
         }
 
+        //Rising Numbers
         for(int i = 0; i < password.length() - 2; i++){
             if(Character.isDigit(c[i]) && Character.isDigit(c[i+1]) && Character.isDigit(c[i+2]) && c[i] + 1 == c[i+1] && c[i+1] + 1 == c[i+2]){
                 risingNumbers = true;

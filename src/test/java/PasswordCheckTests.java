@@ -62,7 +62,7 @@ public class PasswordCheckTests {
 
     @Test
     void checkPasswordRepeatingNumbers() {
-        //check if it checks for Special Characters
+        //check if it checks for RepeatingNumbers eg. 1111
         PasswordCheck pw = new PasswordCheck();
         boolean b = pw.checkPassword("1111AAAa1AA!");
         assertFalse(b);
@@ -70,7 +70,7 @@ public class PasswordCheckTests {
 
     @Test
     void checkPasswordRisingNumbers() {
-        //check if it checks for Special Characters
+        //check if it checks for Rising Numbers eg. 123
         PasswordCheck pw = new PasswordCheck();
         boolean b = pw.checkPassword("123AAAa1AAA");
         assertFalse(b);
