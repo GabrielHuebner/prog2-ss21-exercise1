@@ -8,6 +8,10 @@ public class PasswordCheck {
     }
 
     public boolean checkPassword(String password){
+        if(password == null){
+            return false;
+        }
+
         char[] c = password.toCharArray();
         boolean upper = false;
         boolean lower = false;
@@ -30,31 +34,19 @@ public class PasswordCheck {
             else if(Character.isDigit(c[i])){
                 number = true;
             }
+            else if(c[i] != '(' && c[i] != ')' && c[i] != '#' && c[i] != '$' && c[i] != '?' && c[i] != '!' && c[i] != '%' && c[i] != '/' && c[i] != '@' && !Character.isUpperCase(c[i]) && !Character.isLowerCase(c[i]) && !Character.isDigit(c[i])){
+                return false;
+            }
+
             switch (c[i]){
                 case '(':
-                    specialSign = true;
-                    break;
                 case ')':
-                    specialSign = true;
-                    break;
                 case '#':
-                    specialSign = true;
-                    break;
                 case '$':
-                    specialSign = true;
-                    break;
                 case '?':
-                    specialSign = true;
-                    break;
                 case '!':
-                    specialSign = true;
-                    break;
                 case '%':
-                    specialSign = true;
-                    break;
                 case '/':
-                    specialSign = true;
-                    break;
                 case '@':
                     specialSign = true;
                     break;
